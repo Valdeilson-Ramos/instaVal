@@ -22,8 +22,8 @@ class App extends Component {
           descricao: 'Isso sim é ser raiz!!!!!', 
           imgperfil: 'https://sujeitoprogramador.com/instareact/fotoPerfil2.png', 
           imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto2.png', 
-          likeada: false, 
-          likers: 0
+          likeada: true, 
+          likers: 1
         },
         {
           id: '3', 
@@ -82,6 +82,7 @@ class App extends Component {
         </View>
         <FlatList 
           showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
           data={this.state.feed}
           renderItem={({item}) => <Lista data={item} /> }
         />
